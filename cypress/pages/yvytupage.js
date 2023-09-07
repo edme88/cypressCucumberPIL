@@ -15,6 +15,15 @@ class Yvytu {
   }
   //Textos
 
+  //Cabañas
+  getCabTitle() {
+    return cy.get("h3");
+  }
+
+  getItemContainer() {
+    return cy.get('div[class="flex flex-col font-normal"]');
+  }
+
   //Footer
 
   //Generic

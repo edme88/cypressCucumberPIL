@@ -59,3 +59,21 @@ Then(`visualiza el link {string} redirecciona a {string}`, (btnName, link) => {
     .contains(btnName)
     .should("have.attr", "href", link);
 });
+
+Then(
+  `se verifica que la cabaña {string} llamada {string} posee las siguientes caracteristicas {string}`,
+  (num, nomCab, list) => {
+    list = list.split(", ");
+    yvytuHome
+      .getCabTitle()
+      .eq(num - 1)
+      .should("contain.text", `Cabaña ${nomCab}`);
+    yvytuHome
+      .getItemContainer()
+      .eq(num - 1)
+      .find("span")
+      .each((item, $inx) => {
+        cy.wrap(item).should("contain.text", list[$inx]);
+      });
+  }
+);
