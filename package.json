@@ -4,7 +4,8 @@
   "description": "Tests de Cypress con Cucumber",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "cypress:run:yvytu": "npx cypress run --e2e --browser chrome -e \"tags=@yvytu and not @ignore\" -s cypress/e2e/features/**/*.feature"
   },
   "repository": {
     "type": "git",
