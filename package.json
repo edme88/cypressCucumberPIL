@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "cypress:run:yvytu": "npx cypress run --e2e --browser chrome -e \"tags=@yvytu and not @ignore\" -s cypress/e2e/features/Yvytu/*.feature"
+    "cypress:run:yvytu": "npx cypress run --e2e --browser chrome -e \"tags=@yvytu and not @ignore\" -s cypress/e2e/features/Yvytu/*.feature",
+    "cypress:run:todos": "npx cypress run --e2e --browser chrome -e \"tags=not @ignore\" -s cypress/e2e/features/**/*.feature",
+    "generate:report": "node cucumber-html-report.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,8 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^18.0.5",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "cypress": "^13.1.0"
+    "cypress": "^13.1.0",
+    "multiple-cucumber-html-reporter": "^3.4.0"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/e2e/step_definitions/**.js",

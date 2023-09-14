@@ -1,3 +1,4 @@
 node_modules
 reports
 cypress/screenshots/
+cucumber-json-formatter.exe
