@@ -1,7 +1,7 @@
 @regresion @yvytu
 Feature: Home Yvytu
 
-    @menu @focus
+    @menu
     Scenario: Verificar elementos del menú superior
         Given que un usuario está en la página de "Yvytu"
         Then visualiza en el header los botones "LA RESERVA, CABAÑAS, COMO LLEGAR, CONTACTO, DONÁ"
@@ -21,7 +21,7 @@ Feature: Home Yvytu
 
     Scenario: Verificar comportamiento del botón /reserva_yvytu
         Given que un usuario está en la página de "Yvytu"
-        Then visualiza el link "Reservar" redirecciona a "https://wa.me/5493757454400"
+        Then visualiza el link "XXReservar" redirecciona a "https://wa.me/5493757454400"
         And visualiza el link "reserva_yvytu" redirecciona a "https://www.instagram.com/reserva_yvytu/"
         And visualiza el link "Enviar mensaje" redirecciona a "https://wa.me/5493757454400"
 
