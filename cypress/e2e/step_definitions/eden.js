@@ -27,10 +27,9 @@ When(`presiona el botón Ver de {string}`, (showName) => {
 });
 
 Then(`el precio que se visualiza tiene el formato correcto`, () => {
-  /*const precio = new RegExp(
-    "$ [0-9]{1,3}.[0-9]{3},[0-9]{2} + $ [0-9]{1,3}.[0-9]{3},[0-9]{2}"
-  );*/
-  const precio = new RegExp("[0-9]{1,3}.[0-9]{3},[0-9]{2}");
+  const precio = new RegExp(
+    "\\$ [0-9]{1,3}.[0-9]{3},[0-9]{2} \\+ \\$ [0-9]{3},[0-9]{2}"
+  );
   edenHome.getEventPrice().contains(precio);
 });
 
