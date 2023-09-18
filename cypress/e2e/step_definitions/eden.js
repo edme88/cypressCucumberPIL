@@ -15,16 +15,67 @@ When(`presiona el botón del header {string}`, (btnHeader) => {
 });
 
 When(`presiona el botón Ver de {string}`, (showName) => {
-  edenHome
-    .getEventBlock()
-    .contains(showName)
-    .parent()
-    .parent()
-    .parent()
-    .find("a")
-    .last()
-    .click();
+  cy.intercept("GET", "FUNC022211").as("getShow");
+  if (isNaN(showName)) {
+    edenHome
+      .getEventBlock()
+      .contains(showName)
+      .parent()
+      .parent()
+      .find("a")
+      .last()
+      .click();
+  } else {
+    edenHome
+      .getEventBlock()
+      .eq(showName - 1)
+      .parent()
+      .parent()
+      .find("a")
+      .last()
+      .click();
+  }
+  cy.wait("@getShow").then((respuesta) => {
+    cy.writeFile("cypress/fixtures/intercept/show.json", respuesta);
+  });
 });
+
+Then(
+  `el precio que se visualiza tiene el formato correcto validado con la respuesta del intercept`,
+  () => {
+    cy.fixture("intercept/show.json").then((resp) => {
+      const precios = resp.response.body.Precios;
+
+      edenHome.getEventPrice().each((precioShow, inx) => {
+        const precioUb = precios[inx];
+        const precioShows = `${precioUb.PrecioEntrada} + ${precioUb.ServiceCharge}`;
+
+        cy.wrap(precioShow).should("contain.text", precioShows);
+      });
+    });
+  }
+);
+
+Then(
+  `el precio que se visualiza tiene el formato correcto validado con el servicio`,
+  () => {
+    cy.request({
+      method: "GET",
+      url: "https://edenapi.edenentradas.com.ar/edenventarestapi/api/contenido/funcion/FUNC022211",
+    }).then((resp) => {
+      const precios = resp.body.Precios;
+      edenHome.getEventPrice().each((precioShow, inx) => {
+        const precioUb = precios[inx];
+        const precioShows = `${precioUb.PrecioEntrada} + ${precioUb.ServiceCharge}`;
+        edenHome
+          .getEventUbicacion()
+          .eq(inx)
+          .should("contain.text", precioUb.Nombre);
+        cy.wrap(precioShow).should("contain.text", precioShows);
+      });
+    });
+  }
+);
 
 Then(`el precio que se visualiza tiene el formato correcto`, () => {
   const precio = new RegExp(
