@@ -1,4 +1,5 @@
 class EdenEvent {
+  //lOCADORES DE TITULO DE EVENTOS
   getEventTitle() {
     return cy.get(".fechas-funciones span").first();
   }
@@ -7,6 +8,7 @@ class EdenEvent {
     return cy.get(".fechas-funciones span").last();
   }
 
+  //
   getEventDay() {
     return cy.get("#calendarDay");
   }
