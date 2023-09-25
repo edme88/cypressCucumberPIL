@@ -13,7 +13,7 @@ module.exports = defineConfig({
     CLARO_URL: "https://tienda.claro.com.ar/",
   },
   e2e: {
-    hideXHRInCommandLog: false,
+    hideXHRInCommandLog: true,
     specPattern: "cypress/e2e/features/**/*.feature",
     async setupNodeEvents(on, config) {
       const bundler = createBundler({

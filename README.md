@@ -15,3 +15,7 @@ El mismo puede ser descargado de https://github.com/cucumber/json-formatter/rele
 - Se repite varias veces una acción, volver atrás (investigar) y cy.reload()
 - HiperLibertad: Ventanas tipoPopUp
 - Comportamineto de mobile a veces es diferente
+
+## Flags de Configuración
+
+- hideXHRInCommandLog: En **true** permite NO isualizar las llamadas al servicio de tipo XHR. En **false**..
