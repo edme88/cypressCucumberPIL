@@ -11,6 +11,7 @@ module.exports = defineConfig({
     YVYTU_URL: "https://vientosdelaselva.com.ar/",
     EDEN_URL: "https://www.edenentradas.com.ar/",
     CLARO_URL: "https://tienda.claro.com.ar/",
+    DEXTER_URL: "https://www.dexter.com.ar/",
   },
   e2e: {
     hideXHRInCommandLog: true,
