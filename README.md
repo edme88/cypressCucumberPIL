@@ -7,8 +7,8 @@ Ejemplo basico de uso de cypress con cucumber
 Para que se genere el reporte con el comando "gerenate:report" se debe tener el archivo "cucumber-json-formatter.exe" en la carpeta raiz.
 El mismo puede ser descargado de https://github.com/cucumber/json-formatter/releases/tag/v19.0.0
 
-- llamadas xhr
-- Tienda: Hover en accesorio, audio (real-events), filtros de precios
+- [x] llamadas xhr
+- [x] Tienda: Hover en accesorio, audio (real-events), filtros de precios
 - Locadores que "desaparecen" (investigar)
 - Dexter: scroll y llegar al le coq sport (marcas) y hacer click ahí
 - Commands parametrizado para el login y logout
