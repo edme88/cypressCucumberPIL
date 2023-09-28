@@ -10,7 +10,7 @@ El mismo puede ser descargado de https://github.com/cucumber/json-formatter/rele
 - [x] llamadas xhr
 - [x] Tienda: Hover en accesorio, audio (real-events), filtros de precios
 - [x] Locadores que "desaparecen" (investigar)
-- Dexter: scroll y llegar al le coq sport (marcas) y hacer click ahí
+- [x] Dexter: scroll y llegar al le coq sport (marcas) y hacer click ahí
 - Commands parametrizado para el login y logout
 - Se repite varias veces una acción, volver atrás (investigar) y cy.reload()
 - HiperLibertad: Ventanas tipoPopUp
