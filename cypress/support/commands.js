@@ -24,3 +24,10 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import "cypress-real-events";
+const storeLogin = require("../pages/storeLogin");
+
+Cypress.Commands.add("login", (user, password) => {
+  storeLogin.getLoginInput().type(user);
+  storeLogin.getPassInput().type(password);
+  storeLogin.getLoginBtn().click();
+});

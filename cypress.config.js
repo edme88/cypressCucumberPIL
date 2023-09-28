@@ -17,12 +17,12 @@ module.exports = defineConfig({
     //Configuración de los usuarios
     users: [
       {
-        user: "agusDarwoft",
-        pass: "automation",
+        user: "XXXXXXXXXXXXXXXX",
+        pass: "XXXXXXXXXXXXXXXX",
       },
       {
-        user: "sergito",
-        pass: "cachavacha",
+        user: "YYYYYYYYYYYYYYYYY",
+        pass: "YYYYYYYYYYYYYYYY",
       },
     ],
   },

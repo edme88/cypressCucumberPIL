@@ -10,9 +10,10 @@ When(`el usuario presiona {string} en el menu principal`, (opcion) => {
 When(`completa usuario y password {string}`, (num) => {
   const userData = Cypress.env().users[num - 1];
   cy.log(userData);
-  storeLogin.getLoginInput().type(userData.user);
+  cy.login(userData.user, userData.pass);
+  /*storeLogin.getLoginInput().type(userData.user);
   storeLogin.getPassInput().type(userData.pass);
-  storeLogin.getLoginBtn().click();
+  storeLogin.getLoginBtn().click();*/
 });
 
 Then(`se verifica que el título principal es {string}`, (title) => {
