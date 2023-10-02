@@ -14,3 +14,9 @@ Feature: Tests de la página de Store Automation
     Scenario: Realizar Login & LOgout - Ejemplo 2
         When el usuario realiza logout
         Then se verifica que el título principal es "Account Logout"
+
+    Scenario: Test visual del header
+        Given que un usuario está en la página de "Store"
+        Then se verifica que el elemento ".headerstrip" posee los atributos
+            | css-attribute    | valor            | log                    |
+            | background-color | rgb(0, 161, 203) | fondo de color celeste |

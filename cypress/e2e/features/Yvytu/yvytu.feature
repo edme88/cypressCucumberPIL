@@ -41,7 +41,6 @@ Feature: Home Yvytu
             | 1   | Yaguareté | Para 4 personas, 2 habitaciones, Baño con ducha, Ropa de cama, Wi-fi, Aire acondicionado |
             | 2   | Arasari   | Para 4 personas, 2 habitaciones, Baño con ducha, Ropa de cama, Wi-fi                     |
 
-    @focus
     Scenario: Visual Tetsing con cypress-image-diff
         Given que un usuario está en la página de "Yvytu"
         Then se compara "home-page-yvytu" con la imagen base
