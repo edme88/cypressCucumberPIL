@@ -4,3 +4,5 @@ cypress/screenshots/
 cucumber-json-formatter.exe
 cypress/fixtures/intercept
 cypress.env.json
+cypress-visual-screenshots/comparison
+cypress-visual-screenshots/diff
