@@ -25,7 +25,3 @@ When(`selecciona la opción de {string}`, (opcion) => {
       });
   });
 });
-
-Then(`se verifica que la url contiene {string}`, (url) => {
-  cy.url().should("include", url);
-});

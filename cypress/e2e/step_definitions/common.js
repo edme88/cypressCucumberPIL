@@ -1,4 +1,4 @@
-import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given(`que un usuario está en la página de {string}`, (urlName) => {
   const url = Cypress.env(`${urlName.toUpperCase()}_URL`);
@@ -36,4 +36,19 @@ Then(`se toma una captura de pantalla de {string}`, (screenName) => {
 
 Then(`se toma una captura de pantalla del elemento {string}`, (elemento) => {
   cy.get(elemento).first().screenshot();
+});
+
+When(
+  `cuando el usuario presiona la flecha de {string} en el navegador`,
+  (action) => {
+    cy.go(action); //back => -1, foward => 1,
+  }
+);
+
+Then(`se verifica que la url contiene {string}`, (url) => {
+  cy.url().should("include", url);
+});
+
+Then(`se verifica que la url es {string}`, (url) => {
+  cy.url().should("eq", url);
 });
