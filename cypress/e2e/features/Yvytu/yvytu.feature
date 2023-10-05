@@ -5,6 +5,8 @@ Feature: Home Yvytu
     Scenario: Verificar elementos del menú superior
         Given que un usuario está en la página de "Yvytu"
         Then visualiza en el header los botones "LA RESERVA, CABAÑAS, COMO LLEGAR, CONTACTO, DONÁ"
+        And se toma una captura de pantalla de "PaginaDeYvytu"
+        And se toma una captura de pantalla del elemento "[class=\"w-full h-600 bg-black bg-opacity-40\"]"
 
     Scenario: Verificar Imágenes del Banner Principal
         Given que un usuario está en la página de "Yvytu"

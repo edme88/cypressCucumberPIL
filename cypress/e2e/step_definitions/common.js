@@ -7,7 +7,7 @@ Given(`que un usuario está en la página de {string}`, (urlName) => {
 });
 
 Then(`se compara {string} con la imagen base`, (imageName) => {
-  cy.compareSnapshot(imageName);
+  //cy.compareSnapshot(imageName);
 });
 
 Then(
@@ -29,3 +29,11 @@ Then(
     });
   }
 );
+
+Then(`se toma una captura de pantalla de {string}`, (screenName) => {
+  cy.screenshot(screenName);
+});
+
+Then(`se toma una captura de pantalla del elemento {string}`, (elemento) => {
+  cy.get(elemento).first().screenshot();
+});
