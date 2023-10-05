@@ -28,7 +28,7 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^18.0.5",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "cypress": "^13.1.0",
+    "cypress": "^13.3.0",
     "cypress-image-diff-js": "^1.30.1",
     "cypress-real-events": "^1.10.3",
     "multiple-cucumber-html-reporter": "^3.4.0"
