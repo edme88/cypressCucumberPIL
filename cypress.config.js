@@ -36,7 +36,7 @@ module.exports = defineConfig({
       });
       on("file:preprocessor", bundler);
       await addCucumberPreprocessorPlugin(on, config);
-      require("cypress-image-diff-js/dist/plugin")(on, config);
+      //require("cypress-image-diff-js/dist/plugin")(on, config);
       return config;
     },
   },
