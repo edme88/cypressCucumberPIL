@@ -14,6 +14,7 @@ module.exports = defineConfig({
     CLARO_URL: "https://tienda.claro.com.ar/",
     DEXTER_URL: "https://www.dexter.com.ar/",
     STORE_URL: "https://automationteststore.com/",
+    HIPERLIBERTAD_URL: "https://www.hiperlibertad.com.ar/",
     //Configuración de los usuarios
     users: [
       {
@@ -44,7 +45,7 @@ module.exports = defineConfig({
   video: false,
   retries: {
     openMode: 0,
-    runMode: 2,
+    runMode: 0,
   },
   defaultCommandTimeout: 8000,
 });
