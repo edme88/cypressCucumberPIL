@@ -15,6 +15,7 @@ module.exports = defineConfig({
     DEXTER_URL: "https://www.dexter.com.ar/",
     STORE_URL: "https://automationteststore.com/",
     HIPERLIBERTAD_URL: "https://www.hiperlibertad.com.ar/",
+    INTERNET_URL: "https://the-internet.herokuapp.com/iframe",
     //Configuración de los usuarios
     users: [
       {

@@ -12,8 +12,8 @@ El mismo puede ser descargado de https://github.com/cucumber/json-formatter/rele
 - [x] Locadores que "desaparecen" (investigar)
 - [x] Dexter: scroll y llegar al le coq sport (marcas) y hacer click ahí
 - [x] Commands parametrizado para el login y logout
-- Se repite varias veces una acción, volver atrás (investigar) y cy.reload()
-- HiperLibertad: Ventanas tipoPopUp
+- [x] Se repite varias veces una acción, volver atrás (investigar) y cy.reload()
+- [x] HiperLibertad: Ventanas tipoPopUp
 - Comportamineto de mobile a veces es diferente
 
 ## Flags de Configuración

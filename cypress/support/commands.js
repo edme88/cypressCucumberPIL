@@ -31,3 +31,11 @@ Cypress.Commands.add("login", (user, password) => {
   storeLogin.getPassInput().type(password);
   storeLogin.getLoginBtn().click();
 });
+
+Cypress.Commands.add("getIframe", (iframe) => {
+  return cy
+    .get(iframe)
+    .its("0.contentDocument.body")
+    .should("be.visible")
+    .then(cy.wrap);
+});
