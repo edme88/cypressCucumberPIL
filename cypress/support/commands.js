@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import "cypress-real-events";
+import "cypress-iframe";
 const storeLogin = require("../pages/storeLogin");
 
 Cypress.Commands.add("login", (user, password) => {

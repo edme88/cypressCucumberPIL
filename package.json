@@ -48,5 +48,8 @@
       "enabled": true,
       "output": "reports/log.json"
     }
+  },
+  "devDependencies": {
+    "cypress-iframe": "^1.0.1"
   }
 }
