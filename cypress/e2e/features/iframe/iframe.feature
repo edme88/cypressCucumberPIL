@@ -6,7 +6,7 @@ Feature: Tests de Iframe
         Then se elimina el texto y se escribe "Hola Mundo"
 
     @focus
-    Scenario:
+    Scenario: Uso de libreria de iframe
         Given que un usuario está en la página de "internet"
         Then el usuario elimina el texto y escribe "Hola"
 

@@ -54,3 +54,39 @@ Then(`se verifica que la url es {string}`, (url) => {
 
   //cy.reload();
 });
+
+When(`se desea testear accesibilidad en la página`, () => {
+  cy.injectAxe();
+});
+
+Then(`se genera un listado de los errores de accesibilidad`, () => {
+  cy.checkA11y();
+});
+
+Then(
+  `se genera un listado de los errores de accesibilidad del elemento {string}`,
+  (elementSelect) => {
+    cy.checkA11y(elementSelect);
+  }
+);
+
+Then(
+  `se genera un listado de los errores de accesibilidad de toda la página excepto del elemento {string}`,
+  (elementSelect) => {
+    cy.checkA11y({ exclude: [elementSelect] });
+  }
+);
+
+Then(
+  `se genera un listado de los errores {string} de accesibilidad`,
+  (errorLvl) => {
+    cy.checkA11y(null, { includedImpacts: [errorLvl] });
+  }
+);
+
+Then(
+  `se genera un listado de los errores de accesibilidad y se imprime reporte`,
+  () => {
+    cy.checkA11y(null, null, terminal);
+  }
+);

@@ -17,6 +17,7 @@
 import "./commands";
 const compareSnapshotCommand = require("cypress-image-diff-js/dist/command");
 compareSnapshotCommand();
+import "cypress-axe";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
@@ -39,3 +40,20 @@ Cypress.on("uncaught:exception", (err, runnable) => {
   // returning false here prevents Cypress from failing the test
   return false;
 });
+
+terminal = (violations) => {
+  const violantionData = violations.map(
+    ({ id, impact, description, nodes }) => ({
+      id,
+      impact,
+      description,
+      nodes: nodes.length,
+    })
+  );
+
+  cy.log(JSON.stringify(violantionData));
+  cy.writeFile(
+    `cypress/fixtures/accesibilidad/basic_axe_report.json`,
+    violantionData
+  );
+};

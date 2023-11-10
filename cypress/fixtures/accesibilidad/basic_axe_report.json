@@ -1,0 +1,38 @@
+[
+  {
+    "id": "aria-allowed-role",
+    "impact": "minor",
+    "description": "Ensures role attribute has an appropriate value for the element",
+    "nodes": 2
+  },
+  {
+    "id": "aria-hidden-focus",
+    "impact": "serious",
+    "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+    "nodes": 1
+  },
+  {
+    "id": "color-contrast",
+    "impact": "serious",
+    "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    "nodes": 4
+  },
+  {
+    "id": "heading-order",
+    "impact": "moderate",
+    "description": "Ensures the order of headings is semantically correct",
+    "nodes": 1
+  },
+  {
+    "id": "landmark-one-main",
+    "impact": "moderate",
+    "description": "Ensures the document has a main landmark",
+    "nodes": 1
+  },
+  {
+    "id": "region",
+    "impact": "moderate",
+    "description": "Ensures all page content is contained by landmarks",
+    "nodes": 18
+  }
+]
