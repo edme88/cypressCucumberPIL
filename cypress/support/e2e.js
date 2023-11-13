@@ -43,11 +43,15 @@ Cypress.on("uncaught:exception", (err, runnable) => {
 
 terminal = (violations) => {
   const violantionData = violations.map(
-    ({ id, impact, description, nodes }) => ({
+    ({ id, impact, tags, description, help, helpUrl, nodes }) => ({
       id,
       impact,
+      tags,
       description,
-      nodes: nodes.length,
+      help,
+      helpUrl,
+      "información de nodos": nodes,
+      "cantidad de nodos": nodes.length,
     })
   );
 
