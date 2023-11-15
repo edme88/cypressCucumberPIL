@@ -60,4 +60,42 @@ terminal = (violations) => {
     `cypress/fixtures/accesibilidad/basic_axe_report.json`,
     violantionData
   );
+  completeReportHTML(violations);
+};
+
+completeReportHTML = (violations) => {
+  //Obtener los valores que necesito escribir en el reporte
+  let erroresTotales = violations.length;
+  let fechaEjecucion = new Date().toLocaleDateString("es-AR");
+  let ambiente = Cypress.env("ENV");
+  let urlWeb = Cypress.env(`${ambiente}_URL`);
+  let cantidadErroresCriticos = violations.filter(
+    (value) => value.impact === "critical"
+  ).length;
+  let cantidadErroresSerios = violations.filter(
+    (value) => value.impact === "serious"
+  ).length;
+  let cantidadErroresModerados = violations.filter(
+    (value) => value.impact === "moderate"
+  ).length;
+  let cantidadErroresMenores = violations.filter(
+    (value) => value.impact === "minor"
+  ).length;
+
+  //Leer el template
+  cy.readFile(`template/report_template.html`).then((template) => {
+    template = template.replace("${total_violations}", erroresTotales);
+    template = template.replace("${target_url}", urlWeb);
+    template = template.replace("${date_run}", fechaEjecucion);
+    template = template.replace("${qty_critical}", cantidadErroresCriticos);
+    template = template.replace("${qty_serious}", cantidadErroresSerios);
+    template = template.replace("${qty_moderate}", cantidadErroresModerados);
+    template = template.replace("${qty_minor}", cantidadErroresMenores);
+
+    //Escribir reporte con estos datos
+    cy.writeFile(
+      `cypress/fixtures/accesibilidad/axe_complete_report.html`,
+      template
+    );
+  });
 };
