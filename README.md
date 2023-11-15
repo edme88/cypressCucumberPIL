@@ -19,3 +19,8 @@ El mismo puede ser descargado de https://github.com/cucumber/json-formatter/rele
 ## Flags de Configuración
 
 - hideXHRInCommandLog: En **true** permite NO isualizar las llamadas al servicio de tipo XHR. En **false**..
+
+## Next Steps
+
+Instalación de npm i @cypress-audit/lighthouse
+https://mfrachet.github.io/cypress-audit/guides/lighthouse/installation.html#the-server-configuration
