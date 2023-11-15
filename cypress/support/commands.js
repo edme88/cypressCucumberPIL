@@ -26,6 +26,7 @@
 import "cypress-real-events";
 import "cypress-iframe";
 const storeLogin = require("../pages/storeLogin");
+import "@cypress-audit/lighthouse/commands";
 
 Cypress.Commands.add("login", (user, password) => {
   storeLogin.getLoginInput().type(user);

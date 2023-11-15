@@ -90,3 +90,7 @@ Then(
     cy.checkA11y(null, null, terminal);
   }
 );
+
+Then(`se ejecuta lighthouse`, () => {
+  cy.lighthouse();
+});

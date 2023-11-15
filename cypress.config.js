@@ -4,6 +4,8 @@ const addCucumberPreprocessorPlugin =
   require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
 const createEsbuildPlugin =
   require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
+const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
+const { pa11y } = require("@cypress-audit/pa11y");
 
 module.exports = defineConfig({
   env: {
@@ -32,6 +34,10 @@ module.exports = defineConfig({
     hideXHRInCommandLog: true,
     specPattern: "cypress/e2e/features/**/*.feature",
     async setupNodeEvents(on, config) {
+      on("before:browser:launch", (browser = {}, launchOptions) => {
+        prepareAudit(launchOptions);
+      });
+
       const bundler = createBundler({
         plugins: [createEsbuildPlugin(config)],
       });
@@ -48,6 +54,8 @@ module.exports = defineConfig({
           console.table(message);
           return null;
         },
+        lighthouse: lighthouse(),
+        pa11y: pa11y(console.log.bind(console)),
       });
 
       return config;
