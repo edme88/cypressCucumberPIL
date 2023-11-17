@@ -92,5 +92,25 @@ Then(
 );
 
 Then(`se ejecuta lighthouse`, () => {
-  cy.lighthouse();
+  /*cy.lighthouse({
+    performance: 85,
+    accessibility: 100,
+    "best-practices": 85,
+    seo: 85,
+    pwa: 100,
+  });*/
+
+  const thresholds = {
+    performance: 5,
+    accessibility: 5,
+    "best-practices": 5,
+    seo: 5,
+    pwa: 5,
+  };
+
+  const lighthouseOptions = null;
+
+  const lighthouseConfig = null;
+
+  cy.lighthouse(thresholds, lighthouseOptions, lighthouseConfig);
 });

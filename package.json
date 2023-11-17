@@ -7,7 +7,8 @@
     "test": "test",
     "cypress:run:yvytu": "npx cypress run --e2e --browser chrome -e \"tags=@yvytu and not @ignore\" -s cypress/e2e/features/Yvytu/*.feature",
     "cypress:run:todos": "npx cypress run --e2e --browser chrome -e \"tags=not @ignore\" -s cypress/e2e/features/**/*.feature",
-    "generate:report": "node cucumber-html-report.js"
+    "generate:report": "node cucumber-html-report.js",
+    "generate:lighthouse:report": "lighthouse https://www.claro.com.ar/personas"
   },
   "repository": {
     "type": "git",
@@ -33,7 +34,6 @@
     "cypress-axe": "^1.5.0",
     "cypress-image-diff-js": "^1.30.1",
     "cypress-real-events": "^1.10.3",
-    "lighthouse": "^11.3.0",
     "multiple-cucumber-html-reporter": "^3.4.0"
   },
   "cypress-cucumber-preprocessor": {
