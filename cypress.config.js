@@ -6,6 +6,7 @@ const createEsbuildPlugin =
   require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
 const { pa11y } = require("@cypress-audit/pa11y");
+const fs = require("fs");
 
 module.exports = defineConfig({
   env: {
@@ -54,7 +55,11 @@ module.exports = defineConfig({
           console.table(message);
           return null;
         },
-        lighthouse: lighthouse(),
+        lighthouse: lighthouse((lighthouseReport) => {
+          console.log("---- Writing lighthouse report to disk ----");
+
+          fs.writeFile("lighthouse.html", lighthouseReport.report);
+        }),
         pa11y: pa11y(console.log.bind(console)),
       });
 

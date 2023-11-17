@@ -108,9 +108,15 @@ Then(`se ejecuta lighthouse`, () => {
     pwa: 5,
   };
 
-  const lighthouseOptions = null;
+  const lighthouseOptions = {
+    formFactor: "desktop",
+    screenEmulation: { disabled: true },
+  };
 
-  const lighthouseConfig = null;
+  const lighthouseConfig = {
+    settings: { output: "html" },
+    extends: "lighthouse:default",
+  };
 
   cy.lighthouse(thresholds, lighthouseOptions, lighthouseConfig);
 });
