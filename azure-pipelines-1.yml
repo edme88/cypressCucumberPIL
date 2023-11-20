@@ -20,11 +20,11 @@ steps:
     npm run cypress:run:yvytu
   displayName: 'npm install and build'
   
-- task: CmdLine@2
-  inputs:
-    script: 'npm run generate:report'
+- script: |
+    npm run generate:report
+  displayName: 'Run Generate Report'
 
-- task: CmdLine@2
-  inputs:
-    script: 'npm run generate:lighthouse:report'
+- script: |
+    npm run generate:lighthouse:report
+  displayName: 'Run lighthouse report'
 
