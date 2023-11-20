@@ -28,3 +28,13 @@ steps:
     npm run generate:lighthouse:report
   displayName: 'Run lighthouse report'
 
+- script: |
+    node junit-report.js
+  displayName: 'Run Generate JUNIT Report'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'reports/test_result.xml'
+    searchFolder: '$(System.DefaultWorkingDirectory)/results'
+    failTaskOnFailedTests: true
